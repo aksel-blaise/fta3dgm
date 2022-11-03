@@ -3,7 +3,7 @@ French trade axe morphology and makers’ marks from the La Belle
 shipwreck
 ================
 Robert Z. Selden, Jr.
-14 May, 2021
+03 November, 2022
 
 ## Load packages
 
@@ -15,31 +15,39 @@ devtools::install_github("mlcollyer/RRPP")
     ## Downloading GitHub repo mlcollyer/RRPP@HEAD
 
     ## 
-    ##          checking for file 'C:\Users\seldenjrz\AppData\Local\Temp\Rtmpm8r70w\remotes4ec03b953d\mlcollyer-RRPP-a803f28/DESCRIPTION' ...  v  checking for file 'C:\Users\seldenjrz\AppData\Local\Temp\Rtmpm8r70w\remotes4ec03b953d\mlcollyer-RRPP-a803f28/DESCRIPTION'
-    ##       -  preparing 'RRPP': (366ms)
-    ##    checking DESCRIPTION meta-information ...     checking DESCRIPTION meta-information ...   v  checking DESCRIPTION meta-information
-    ##       -  checking for LF line-endings in source and make files and shell scripts
-    ##       -  checking for empty or unneeded directories
-    ##       -  building 'RRPP_1.0.0.tar.gz'
+    ##          checking for file 'C:\Users\seldenjrz\AppData\Local\Temp\RtmpAfYb0w\remotes1e501d443863\mlcollyer-RRPP-7a60a15/DESCRIPTION' ...     checking for file 'C:\Users\seldenjrz\AppData\Local\Temp\RtmpAfYb0w\remotes1e501d443863\mlcollyer-RRPP-7a60a15/DESCRIPTION' ... OK  ✔  checking for file 'C:\Users\seldenjrz\AppData\Local\Temp\RtmpAfYb0w\remotes1e501d443863\mlcollyer-RRPP-7a60a15/DESCRIPTION' (491ms)
+    ##            ─  preparing 'RRPP': (334ms)
+    ## ✔  checking DESCRIPTION meta-information
+    ##       ─  checking for LF line-endings in source and make files and shell scripts
+    ##       ─  checking for empty or unneeded directories
+    ##       ─  building 'RRPP_1.3.1.999.tar.gz'
     ##      
     ## 
-
-    ## Installing package into 'C:/Users/seldenjrz/Documents/R/win-library/4.0'
-    ## (as 'lib' is unspecified)
 
 ``` r
 devtools::install_github("geomorphR/geomorph", ref = "Stable", build_vignettes = TRUE)
 ```
 
-    ## Skipping install of 'geomorph' from a github remote, the SHA1 (b59fac7d) has not changed since last install.
-    ##   Use `force = TRUE` to force installation
+    ## Downloading GitHub repo geomorphR/geomorph@Stable
+
+    ## 
+    ##          checking for file 'C:\Users\seldenjrz\AppData\Local\Temp\RtmpAfYb0w\remotes1e503c786410\geomorphR-geomorph-dd331e2/DESCRIPTION' ...     checking for file 'C:\Users\seldenjrz\AppData\Local\Temp\RtmpAfYb0w\remotes1e503c786410\geomorphR-geomorph-dd331e2/DESCRIPTION' ...   ✔  checking for file 'C:\Users\seldenjrz\AppData\Local\Temp\RtmpAfYb0w\remotes1e503c786410\geomorphR-geomorph-dd331e2/DESCRIPTION' (428ms)
+    ##       ─  preparing 'geomorph': (516ms)
+    ##    checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
+    ##       ─  installing the package to build vignettes (496ms)
+    ##          creating vignettes ...     creating vignettes ...   ✔  creating vignettes (1m 33.8s)
+    ##       ─  checking for LF line-endings in source and make files and shell scripts
+    ##       ─  checking for empty or unneeded directories
+    ##       ─  building 'geomorph_4.0.4.tar.gz'
+    ##      
+    ## 
 
 ``` r
 # load
 library(here)
 ```
 
-    ## here() starts at E:/github/fta3dgm
+    ## here() starts at D:/github/fta3dgm
 
 ``` r
 library(StereoMorph)
@@ -56,19 +64,20 @@ library(geomorph)
 library(tidyverse)
 ```
 
-    ## -- Attaching packages --------------------------------------- tidyverse 1.3.1 --
+    ## ── Attaching packages
+    ## ───────────────────────────────────────
+    ## tidyverse 1.3.2 ──
 
-    ## v ggplot2 3.3.3     v purrr   0.3.4
-    ## v tibble  3.1.1     v dplyr   1.0.6
-    ## v tidyr   1.1.3     v stringr 1.4.0
-    ## v readr   1.4.0     v forcats 0.5.1
-
-    ## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
-    ## x tidyr::expand() masks Matrix::expand()
-    ## x dplyr::filter() masks stats::filter()
-    ## x dplyr::lag()    masks stats::lag()
-    ## x tidyr::pack()   masks Matrix::pack()
-    ## x tidyr::unpack() masks Matrix::unpack()
+    ## ✔ ggplot2 3.3.6      ✔ purrr   0.3.5 
+    ## ✔ tibble  3.1.8      ✔ dplyr   1.0.10
+    ## ✔ tidyr   1.2.1      ✔ stringr 1.4.1 
+    ## ✔ readr   2.1.3      ✔ forcats 0.5.2 
+    ## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+    ## ✖ tidyr::expand() masks Matrix::expand()
+    ## ✖ dplyr::filter() masks stats::filter()
+    ## ✖ dplyr::lag()    masks stats::lag()
+    ## ✖ tidyr::pack()   masks Matrix::pack()
+    ## ✖ tidyr::unpack() masks Matrix::unpack()
 
 ``` r
 library(wesanderson)
@@ -143,7 +152,7 @@ csz.mark <- ggplot(qdata, aes(x = mark, y = csz, color = mark)) +
 csz.mark
 ```
 
-    ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
+    ## Bin width defaults to 1/30 of the range of the data. Pick better value with `binwidth`.
 
 <img src="fta2dgm_files/figure-gfm/box.attr-1.png" width="100%" />
 
@@ -270,7 +279,7 @@ anova(fit.size.mark)
     ## Effect sizes (Z) based on F distributions
     ## 
     ##           Df     SS     MS    Rsq      F      Z Pr(>F)  
-    ## mark       1 3695.3 3695.3 0.4334 6.1193 1.6529 0.0252 *
+    ## mark       1 3695.3 3695.3 0.4334 6.1193 1.6529 0.0253 *
     ## Residuals  8 4831.0  603.9 0.5666                       
     ## Total      9 8526.3                                     
     ## ---
@@ -297,10 +306,10 @@ anova(fit.shape.mark)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##           Df        SS        MS     Rsq      F      Z  Pr(>F)  
-    ## mark       1 0.0062247 0.0062247 0.27754 3.0732 2.1133 0.01075 *
-    ## Residuals  8 0.0162036 0.0020255 0.72246                        
-    ## Total      9 0.0224283                                          
+    ##           Df        SS        MS     Rsq      F      Z  Pr(>F)   
+    ## mark       1 0.0062247 0.0062247 0.27754 3.0732 2.1133 0.00995 **
+    ## Residuals  8 0.0162036 0.0020255 0.72246                         
+    ## Total      9 0.0224283                                           
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -417,7 +426,7 @@ plotRefToTarget(mean$asterisk,
 
 ### Colophon
 
-This version of the analysis was generated on 2021-05-14 03:43:12 using
+This version of the analysis was generated on 2022-11-03 09:43:52 using
 the following computational environment and dependencies:
 
 ``` r
@@ -425,236 +434,133 @@ the following computational environment and dependencies:
 if ("devtools" %in% installed.packages()) devtools::session_info()
 ```
 
-    ## - Session info ---------------------------------------------------------------
-    ##  setting  value                       
-    ##  version  R version 4.0.5 (2021-03-31)
-    ##  os       Windows 10 x64              
-    ##  system   x86_64, mingw32             
-    ##  ui       RTerm                       
-    ##  language (EN)                        
-    ##  collate  English_United States.1252  
-    ##  ctype    English_United States.1252  
-    ##  tz       America/Chicago             
-    ##  date     2021-05-14                  
+    ## ─ Session info ───────────────────────────────────────────────────────────────
+    ##  setting  value
+    ##  version  R version 4.2.1 (2022-06-23 ucrt)
+    ##  os       Windows 10 x64 (build 19045)
+    ##  system   x86_64, mingw32
+    ##  ui       RTerm
+    ##  language (EN)
+    ##  collate  English_United States.utf8
+    ##  ctype    English_United States.utf8
+    ##  tz       America/Chicago
+    ##  date     2022-11-03
+    ##  pandoc   2.18 @ C:/Program Files/RStudio/bin/quarto/bin/tools/ (via rmarkdown)
     ## 
-    ## - Packages -------------------------------------------------------------------
-    ##  package          * version    date       lib
-    ##  ape                5.5        2021-04-25 [1]
-    ##  assertthat         0.2.1      2019-03-21 [1]
-    ##  backports          1.2.1      2020-12-09 [1]
-    ##  bezier             1.1.2      2018-12-14 [1]
-    ##  brew               1.0-6      2011-04-13 [1]
-    ##  broom              0.7.6      2021-04-05 [1]
-    ##  cachem             1.0.4      2021-02-13 [1]
-    ##  callr              3.7.0      2021-04-20 [1]
-    ##  cellranger         1.1.0      2016-07-27 [1]
-    ##  cli                2.5.0      2021-04-26 [1]
-    ##  colorspace         2.0-1      2021-05-04 [1]
-    ##  crayon             1.4.1      2021-02-08 [1]
-    ##  crosstalk          1.1.1      2021-01-12 [1]
-    ##  curl               4.3.1      2021-04-30 [1]
-    ##  DBI                1.1.1      2021-01-15 [1]
-    ##  dbplyr             2.1.1      2021-04-06 [1]
-    ##  desc               1.3.0      2021-03-05 [1]
-    ##  devtools           2.4.1      2021-05-05 [1]
-    ##  digest             0.6.27     2020-10-24 [1]
-    ##  dplyr            * 1.0.6      2021-05-05 [1]
-    ##  ellipsis           0.3.2      2021-04-29 [1]
-    ##  evaluate           0.14       2019-05-28 [1]
-    ##  fansi              0.4.2      2021-01-15 [1]
-    ##  farver             2.1.0      2021-02-28 [1]
-    ##  fastmap            1.1.0      2021-01-25 [1]
-    ##  forcats          * 0.5.1      2021-01-27 [1]
-    ##  fs                 1.5.0      2020-07-31 [1]
-    ##  generics           0.1.0      2020-10-31 [1]
-    ##  geomorph         * 4.0.0      2021-05-14 [1]
-    ##  ggplot2          * 3.3.3      2020-12-30 [1]
-    ##  glue               1.4.2      2020-08-27 [1]
-    ##  gtable             0.3.0      2019-03-25 [1]
-    ##  haven              2.4.1      2021-04-23 [1]
-    ##  here             * 1.0.1      2020-12-13 [1]
-    ##  highr              0.9        2021-04-16 [1]
-    ##  hms                1.0.0      2021-01-13 [1]
-    ##  htmltools          0.5.1.1    2021-01-22 [1]
-    ##  htmlwidgets        1.5.3      2020-12-10 [1]
-    ##  httpuv             1.6.1      2021-05-07 [1]
-    ##  httr               1.4.2      2020-07-20 [1]
-    ##  jpeg               0.1-8.1    2019-10-24 [1]
-    ##  jsonlite           1.7.2      2020-12-09 [1]
-    ##  knitr              1.33       2021-04-24 [1]
-    ##  labeling           0.4.2      2020-10-20 [1]
-    ##  later              1.2.0      2021-04-23 [1]
-    ##  lattice            0.20-41    2020-04-02 [2]
-    ##  lifecycle          1.0.0      2021-02-15 [1]
-    ##  lubridate          1.7.10     2021-02-26 [1]
-    ##  magrittr           2.0.1      2020-11-17 [1]
-    ##  manipulateWidget   0.10.1     2020-02-24 [1]
-    ##  MASS               7.3-53.1   2021-02-12 [2]
-    ##  Matrix           * 1.3-2      2021-01-06 [2]
-    ##  memoise            2.0.0      2021-01-26 [1]
-    ##  mime               0.10       2021-02-13 [1]
-    ##  miniUI             0.1.1.1    2018-05-18 [1]
-    ##  modelr             0.1.8      2020-05-19 [1]
-    ##  munsell            0.5.0      2018-06-12 [1]
-    ##  nlme               3.1-152    2021-02-04 [2]
-    ##  pillar             1.6.0      2021-04-13 [1]
-    ##  pkgbuild           1.2.0      2020-12-15 [1]
-    ##  pkgconfig          2.0.3      2019-09-22 [1]
-    ##  pkgload            1.2.1      2021-04-06 [1]
-    ##  png                0.1-7      2013-12-03 [1]
-    ##  prettyunits        1.1.1      2020-01-24 [1]
-    ##  processx           3.5.2      2021-04-30 [1]
-    ##  promises           1.2.0.1    2021-02-11 [1]
-    ##  ps                 1.6.0      2021-02-28 [1]
-    ##  purrr            * 0.3.4      2020-04-17 [1]
-    ##  R6                 2.5.0      2020-10-28 [1]
-    ##  Rcpp               1.0.6      2021-01-15 [1]
-    ##  readr            * 1.4.0      2020-10-05 [1]
-    ##  readxl             1.3.1      2019-03-13 [1]
-    ##  remotes            2.3.0      2021-04-01 [1]
-    ##  reprex             2.0.0      2021-04-02 [1]
-    ##  rgl              * 0.106.8    2021-04-23 [1]
-    ##  rjson              0.2.20     2018-06-08 [1]
-    ##  rlang              0.4.11     2021-04-30 [1]
-    ##  rmarkdown          2.8        2021-05-07 [1]
-    ##  Rook               1.1-1      2014-10-20 [1]
-    ##  rprojroot          2.0.2      2020-11-15 [1]
-    ##  RRPP             * 1.0.0      2021-03-30 [1]
-    ##  rstudioapi         0.13       2020-11-12 [1]
-    ##  rvest              1.0.0      2021-03-09 [1]
-    ##  scales             1.1.1      2020-05-11 [1]
-    ##  sessioninfo        1.1.1      2018-11-05 [1]
-    ##  shiny              1.6.0      2021-01-25 [1]
-    ##  StereoMorph      * 1.6.3      2019-11-30 [1]
-    ##  stringi            1.6.1      2021-05-10 [1]
-    ##  stringr          * 1.4.0      2019-02-10 [1]
-    ##  svgViewR           1.4.1      2020-10-03 [1]
-    ##  testthat           3.0.2      2021-02-14 [1]
-    ##  tibble           * 3.1.1      2021-04-18 [1]
-    ##  tidyr            * 1.1.3      2021-03-03 [1]
-    ##  tidyselect         1.1.1      2021-04-30 [1]
-    ##  tidyverse        * 1.3.1      2021-04-15 [1]
-    ##  tiff               0.1-8      2021-03-31 [1]
-    ##  usethis            2.0.1      2021-02-10 [1]
-    ##  utf8               1.2.1      2021-03-12 [1]
-    ##  vctrs              0.3.8      2021-04-29 [1]
-    ##  webshot            0.5.2      2019-11-22 [1]
-    ##  wesanderson      * 0.3.6.9000 2020-10-21 [1]
-    ##  withr              2.4.2      2021-04-18 [1]
-    ##  xfun               0.22       2021-03-11 [1]
-    ##  xml2               1.3.2      2020-04-23 [1]
-    ##  xtable             1.8-4      2019-04-21 [1]
-    ##  yaml               2.2.1      2020-02-01 [1]
-    ##  source                              
-    ##  CRAN (R 4.0.5)                      
-    ##  CRAN (R 4.0.2)                      
-    ##  CRAN (R 4.0.3)                      
-    ##  CRAN (R 4.0.3)                      
-    ##  CRAN (R 4.0.0)                      
-    ##  CRAN (R 4.0.5)                      
-    ##  CRAN (R 4.0.3)                      
-    ##  CRAN (R 4.0.5)                      
-    ##  CRAN (R 4.0.2)                      
-    ##  CRAN (R 4.0.5)                      
-    ##  CRAN (R 4.0.5)                      
-    ##  CRAN (R 4.0.3)                      
-    ##  CRAN (R 4.0.3)                      
-    ##  CRAN (R 4.0.5)                      
-    ##  CRAN (R 4.0.3)                      
-    ##  CRAN (R 4.0.5)                      
-    ##  CRAN (R 4.0.5)                      
-    ##  CRAN (R 4.0.5)                      
-    ##  CRAN (R 4.0.3)                      
-    ##  CRAN (R 4.0.5)                      
-    ##  CRAN (R 4.0.5)                      
-    ##  CRAN (R 4.0.2)                      
-    ##  CRAN (R 4.0.3)                      
-    ##  CRAN (R 4.0.5)                      
-    ##  CRAN (R 4.0.3)                      
-    ##  CRAN (R 4.0.3)                      
-    ##  CRAN (R 4.0.2)                      
-    ##  CRAN (R 4.0.3)                      
-    ##  Github (geomorphR/geomorph@b59fac7) 
-    ##  CRAN (R 4.0.3)                      
-    ##  CRAN (R 4.0.2)                      
-    ##  CRAN (R 4.0.2)                      
-    ##  CRAN (R 4.0.5)                      
-    ##  CRAN (R 4.0.3)                      
-    ##  CRAN (R 4.0.5)                      
-    ##  CRAN (R 4.0.3)                      
-    ##  CRAN (R 4.0.3)                      
-    ##  CRAN (R 4.0.3)                      
-    ##  CRAN (R 4.0.5)                      
-    ##  CRAN (R 4.0.2)                      
-    ##  CRAN (R 4.0.0)                      
-    ##  CRAN (R 4.0.3)                      
-    ##  CRAN (R 4.0.5)                      
-    ##  CRAN (R 4.0.3)                      
-    ##  CRAN (R 4.0.5)                      
-    ##  CRAN (R 4.0.5)                      
-    ##  CRAN (R 4.0.4)                      
-    ##  CRAN (R 4.0.5)                      
-    ##  CRAN (R 4.0.3)                      
-    ##  CRAN (R 4.0.2)                      
-    ##  CRAN (R 4.0.5)                      
-    ##  CRAN (R 4.0.5)                      
-    ##  CRAN (R 4.0.3)                      
-    ##  CRAN (R 4.0.4)                      
-    ##  CRAN (R 4.0.2)                      
-    ##  CRAN (R 4.0.2)                      
-    ##  CRAN (R 4.0.2)                      
-    ##  CRAN (R 4.0.5)                      
-    ##  CRAN (R 4.0.5)                      
-    ##  CRAN (R 4.0.3)                      
-    ##  CRAN (R 4.0.2)                      
-    ##  CRAN (R 4.0.5)                      
-    ##  CRAN (R 4.0.0)                      
-    ##  CRAN (R 4.0.2)                      
-    ##  CRAN (R 4.0.5)                      
-    ##  CRAN (R 4.0.3)                      
-    ##  CRAN (R 4.0.5)                      
-    ##  CRAN (R 4.0.2)                      
-    ##  CRAN (R 4.0.3)                      
-    ##  CRAN (R 4.0.3)                      
-    ##  CRAN (R 4.0.2)                      
-    ##  CRAN (R 4.0.2)                      
-    ##  CRAN (R 4.0.5)                      
-    ##  CRAN (R 4.0.5)                      
-    ##  CRAN (R 4.0.5)                      
-    ##  CRAN (R 4.0.0)                      
-    ##  CRAN (R 4.0.5)                      
-    ##  CRAN (R 4.0.5)                      
-    ##  CRAN (R 4.0.3)                      
-    ##  CRAN (R 4.0.3)                      
-    ##  CRAN (R 4.0.5)                      
-    ##  CRAN (R 4.0.3)                      
-    ##  CRAN (R 4.0.5)                      
-    ##  CRAN (R 4.0.2)                      
-    ##  CRAN (R 4.0.2)                      
-    ##  CRAN (R 4.0.3)                      
-    ##  CRAN (R 4.0.3)                      
-    ##  CRAN (R 4.0.5)                      
-    ##  CRAN (R 4.0.2)                      
-    ##  CRAN (R 4.0.3)                      
-    ##  CRAN (R 4.0.4)                      
-    ##  CRAN (R 4.0.5)                      
-    ##  CRAN (R 4.0.5)                      
-    ##  CRAN (R 4.0.5)                      
-    ##  CRAN (R 4.0.4)                      
-    ##  CRAN (R 4.0.4)                      
-    ##  CRAN (R 4.0.3)                      
-    ##  CRAN (R 4.0.5)                      
-    ##  CRAN (R 4.0.5)                      
-    ##  CRAN (R 4.0.2)                      
-    ##  Github (karthik/wesanderson@651c944)
-    ##  CRAN (R 4.0.5)                      
-    ##  CRAN (R 4.0.5)                      
-    ##  CRAN (R 4.0.2)                      
-    ##  CRAN (R 4.0.2)                      
-    ##  CRAN (R 4.0.2)                      
+    ## ─ Packages ───────────────────────────────────────────────────────────────────
+    ##  package       * version   date (UTC) lib source
+    ##  ape             5.6-2     2022-03-02 [1] CRAN (R 4.2.1)
+    ##  assertthat      0.2.1     2019-03-21 [1] CRAN (R 4.2.1)
+    ##  backports       1.4.1     2021-12-13 [1] CRAN (R 4.2.0)
+    ##  base64enc       0.1-3     2015-07-28 [1] CRAN (R 4.2.0)
+    ##  bezier          1.1.2     2018-12-14 [1] CRAN (R 4.2.0)
+    ##  brew            1.0-8     2022-09-29 [1] CRAN (R 4.2.1)
+    ##  broom           1.0.1     2022-08-29 [1] CRAN (R 4.2.1)
+    ##  cachem          1.0.6     2021-08-19 [1] CRAN (R 4.2.1)
+    ##  callr           3.7.3     2022-11-02 [1] CRAN (R 4.2.2)
+    ##  cellranger      1.1.0     2016-07-27 [1] CRAN (R 4.2.1)
+    ##  cli             3.4.1     2022-09-23 [1] CRAN (R 4.2.1)
+    ##  colorspace      2.0-3     2022-02-21 [1] CRAN (R 4.2.1)
+    ##  crayon          1.5.2     2022-09-29 [1] CRAN (R 4.2.1)
+    ##  curl            4.3.3     2022-10-06 [1] CRAN (R 4.2.1)
+    ##  DBI             1.1.3     2022-06-18 [1] CRAN (R 4.2.1)
+    ##  dbplyr          2.2.1     2022-06-27 [1] CRAN (R 4.2.1)
+    ##  devtools        2.4.5     2022-10-11 [1] CRAN (R 4.2.1)
+    ##  digest          0.6.30    2022-10-18 [1] CRAN (R 4.2.1)
+    ##  dplyr         * 1.0.10    2022-09-01 [1] CRAN (R 4.2.1)
+    ##  ellipsis        0.3.2     2021-04-29 [1] CRAN (R 4.2.1)
+    ##  evaluate        0.17      2022-10-07 [1] CRAN (R 4.2.1)
+    ##  fansi           1.0.3     2022-03-24 [1] CRAN (R 4.2.1)
+    ##  farver          2.1.1     2022-07-06 [1] CRAN (R 4.2.1)
+    ##  fastmap         1.1.0     2021-01-25 [1] CRAN (R 4.2.1)
+    ##  forcats       * 0.5.2     2022-08-19 [1] CRAN (R 4.2.1)
+    ##  fs              1.5.2     2021-12-08 [1] CRAN (R 4.2.1)
+    ##  gargle          1.2.1     2022-09-08 [1] CRAN (R 4.2.1)
+    ##  generics        0.1.3     2022-07-05 [1] CRAN (R 4.2.1)
+    ##  geomorph      * 4.0.4     2022-11-03 [1] Github (geomorphR/geomorph@dd331e2)
+    ##  ggplot2       * 3.3.6     2022-05-03 [1] CRAN (R 4.2.1)
+    ##  glue            1.6.2     2022-02-24 [1] CRAN (R 4.2.1)
+    ##  googledrive     2.0.0     2021-07-08 [1] CRAN (R 4.2.1)
+    ##  googlesheets4   1.0.1     2022-08-13 [1] CRAN (R 4.2.1)
+    ##  gtable          0.3.1     2022-09-01 [1] CRAN (R 4.2.1)
+    ##  haven           2.5.1     2022-08-22 [1] CRAN (R 4.2.1)
+    ##  here          * 1.0.1     2020-12-13 [1] CRAN (R 4.2.1)
+    ##  highr           0.9       2021-04-16 [1] CRAN (R 4.2.1)
+    ##  hms             1.1.2     2022-08-19 [1] CRAN (R 4.2.1)
+    ##  htmltools       0.5.3     2022-07-18 [1] CRAN (R 4.2.1)
+    ##  htmlwidgets     1.5.4     2021-09-08 [1] CRAN (R 4.2.1)
+    ##  httpuv          1.6.6     2022-09-08 [1] CRAN (R 4.2.1)
+    ##  httr            1.4.4     2022-08-17 [1] CRAN (R 4.2.1)
+    ##  jpeg            0.1-9     2021-07-24 [1] CRAN (R 4.2.0)
+    ##  jsonlite        1.8.3     2022-10-21 [1] CRAN (R 4.2.1)
+    ##  knitr           1.40      2022-08-24 [1] CRAN (R 4.2.1)
+    ##  labeling        0.4.2     2020-10-20 [1] CRAN (R 4.2.0)
+    ##  later           1.3.0     2021-08-18 [1] CRAN (R 4.2.1)
+    ##  lattice         0.20-45   2021-09-22 [1] CRAN (R 4.2.1)
+    ##  lifecycle       1.0.3     2022-10-07 [1] CRAN (R 4.2.1)
+    ##  lubridate       1.8.0     2021-10-07 [1] CRAN (R 4.2.1)
+    ##  magrittr        2.0.3     2022-03-30 [1] CRAN (R 4.2.1)
+    ##  MASS            7.3-58.1  2022-08-03 [1] CRAN (R 4.2.1)
+    ##  Matrix        * 1.5-1     2022-09-13 [1] CRAN (R 4.2.1)
+    ##  memoise         2.0.1     2021-11-26 [1] CRAN (R 4.2.1)
+    ##  mime            0.12      2021-09-28 [1] CRAN (R 4.2.0)
+    ##  miniUI          0.1.1.1   2018-05-18 [1] CRAN (R 4.2.1)
+    ##  modelr          0.1.9     2022-08-19 [1] CRAN (R 4.2.1)
+    ##  munsell         0.5.0     2018-06-12 [1] CRAN (R 4.2.1)
+    ##  nlme            3.1-160   2022-10-10 [1] CRAN (R 4.2.1)
+    ##  pillar          1.8.1     2022-08-19 [1] CRAN (R 4.2.1)
+    ##  pkgbuild        1.3.1     2021-12-20 [1] CRAN (R 4.2.1)
+    ##  pkgconfig       2.0.3     2019-09-22 [1] CRAN (R 4.2.1)
+    ##  pkgload         1.3.1     2022-10-28 [1] CRAN (R 4.2.1)
+    ##  png             0.1-7     2013-12-03 [1] CRAN (R 4.2.0)
+    ##  prettyunits     1.1.1     2020-01-24 [1] CRAN (R 4.2.1)
+    ##  processx        3.8.0     2022-10-26 [1] CRAN (R 4.2.1)
+    ##  profvis         0.3.7     2020-11-02 [1] CRAN (R 4.2.1)
+    ##  promises        1.2.0.1   2021-02-11 [1] CRAN (R 4.2.1)
+    ##  ps              1.7.2     2022-10-26 [1] CRAN (R 4.2.1)
+    ##  purrr         * 0.3.5     2022-10-06 [1] CRAN (R 4.2.1)
+    ##  R6              2.5.1     2021-08-19 [1] CRAN (R 4.2.1)
+    ##  Rcpp            1.0.9     2022-07-08 [1] CRAN (R 4.2.1)
+    ##  readr         * 2.1.3     2022-10-01 [1] CRAN (R 4.2.1)
+    ##  readxl          1.4.1     2022-08-17 [1] CRAN (R 4.2.1)
+    ##  remotes         2.4.2     2021-11-30 [1] CRAN (R 4.2.1)
+    ##  reprex          2.0.2     2022-08-17 [1] CRAN (R 4.2.1)
+    ##  rgl           * 0.110.2   2022-09-26 [1] CRAN (R 4.2.1)
+    ##  rjson           0.2.21    2022-01-09 [1] CRAN (R 4.2.0)
+    ##  rlang           1.0.6     2022-09-24 [1] CRAN (R 4.2.1)
+    ##  rmarkdown       2.17      2022-10-07 [1] CRAN (R 4.2.1)
+    ##  Rook            1.1-1     2014-10-20 [1] CRAN (R 4.2.1)
+    ##  rprojroot       2.0.3     2022-04-02 [1] CRAN (R 4.2.1)
+    ##  RRPP          * 1.3.1.999 2022-09-12 [1] Github (mlcollyer/RRPP@7a60a15)
+    ##  rstudioapi      0.14      2022-08-22 [1] CRAN (R 4.2.1)
+    ##  rvest           1.0.3     2022-08-19 [1] CRAN (R 4.2.1)
+    ##  scales          1.2.1     2022-08-20 [1] CRAN (R 4.2.1)
+    ##  sessioninfo     1.2.2     2021-12-06 [1] CRAN (R 4.2.1)
+    ##  shiny           1.7.3     2022-10-25 [1] CRAN (R 4.2.1)
+    ##  StereoMorph   * 1.6.7     2022-05-25 [1] CRAN (R 4.2.1)
+    ##  stringi         1.7.8     2022-07-11 [1] CRAN (R 4.2.1)
+    ##  stringr       * 1.4.1     2022-08-20 [1] CRAN (R 4.2.1)
+    ##  svgViewR        1.4.1     2020-10-03 [1] CRAN (R 4.2.1)
+    ##  tibble        * 3.1.8     2022-07-22 [1] CRAN (R 4.2.1)
+    ##  tidyr         * 1.2.1     2022-09-08 [1] CRAN (R 4.2.1)
+    ##  tidyselect      1.2.0     2022-10-10 [1] CRAN (R 4.2.1)
+    ##  tidyverse     * 1.3.2     2022-07-18 [1] CRAN (R 4.2.1)
+    ##  tiff            0.1-11    2022-01-31 [1] CRAN (R 4.2.0)
+    ##  tzdb            0.3.0     2022-03-28 [1] CRAN (R 4.2.1)
+    ##  urlchecker      1.0.1     2021-11-30 [1] CRAN (R 4.2.1)
+    ##  usethis         2.1.6     2022-05-25 [1] CRAN (R 4.2.1)
+    ##  utf8            1.2.2     2021-07-24 [1] CRAN (R 4.2.1)
+    ##  vctrs           0.5.0     2022-10-22 [1] CRAN (R 4.2.1)
+    ##  wesanderson   * 0.3.6     2018-04-20 [1] CRAN (R 4.2.1)
+    ##  withr           2.5.0     2022-03-03 [1] CRAN (R 4.2.1)
+    ##  xfun            0.34      2022-10-18 [1] CRAN (R 4.2.1)
+    ##  xml2            1.3.3     2021-11-30 [1] CRAN (R 4.2.1)
+    ##  xtable          1.8-4     2019-04-21 [1] CRAN (R 4.2.1)
+    ##  yaml            2.3.6     2022-10-18 [1] CRAN (R 4.2.1)
     ## 
-    ## [1] C:/Users/seldenjrz/Documents/R/win-library/4.0
-    ## [2] C:/Program Files/R/R-4.0.5/library
+    ##  [1] C:/Users/seldenjrz/AppData/Local/Programs/R/R-4.2.1/library
+    ## 
+    ## ──────────────────────────────────────────────────────────────────────────────
 
 Current Git commit details are:
 
@@ -663,9 +569,9 @@ Current Git commit details are:
 if ("git2r" %in% installed.packages() & git2r::in_repository(path = ".")) git2r::repository(here::here())  
 ```
 
-    ## Local:    main E:/github/fta3dgm
+    ## Local:    main D:/github/fta3dgm
     ## Remote:   main @ origin (https://github.com/aksel-blaise/fta3dgm)
-    ## Head:     [b2a0e68] 2021-05-14: <init integration + modularity>
+    ## Head:     [6f7692d] 2021-05-14: <install>
 
 ## References cited
 
